@@ -5,7 +5,7 @@ class Shows < ApplicationRecord
   belongs_to :audis
 
   before_create: do
-    self.seats = @audi.seats
+    self.seats = Audis.seats
   end
   
 end
