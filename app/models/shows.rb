@@ -6,4 +6,6 @@ class Shows < ApplicationRecord
 
   before_create: do
     self.seats = @audi.seats
+  end
+  
 end
