@@ -15,6 +15,8 @@ class Bookings < ApplicationRecord
 
     def seats_cal
     Shows.seats = Shows.seats - self.seats
+    
+    Shows.save
     end
     
 end
