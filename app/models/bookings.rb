@@ -8,14 +8,14 @@ class Bookings < ApplicationRecord
   
   private
     def seats_book
-      if seats > @shows.seats
+      if seats > Shows.seats
         errors.add(:seats, "Not enough seats available.")
       end
     end
 
     def seats_cal
     Shows.seats = Shows.seats - self.seats
-    
+
     Shows.save
     end
     
