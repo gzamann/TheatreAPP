@@ -1,4 +1,4 @@
-class Audis < ApplicationRecord
+class Audi < ApplicationRecord
   validates :number, presence: true, length: {maximum: 5}
   validates :seats, presence: true, numericality:{only_integer: true}
   has_many :shows

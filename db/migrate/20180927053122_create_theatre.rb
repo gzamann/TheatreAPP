@@ -4,7 +4,7 @@ class CreateTheatre < ActiveRecord::Migration[5.2]
       t.string :name
       t.string :address
       t.integer :number
-
+      
       t.timestamps
     end
   end

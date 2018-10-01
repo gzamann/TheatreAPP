@@ -10,13 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_27_062105) do
+ActiveRecord::Schema.define(version: 2018_10_01_152611) do
 
   create_table "audis", force: :cascade do |t|
     t.integer "number"
     t.integer "seats"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "theatre_id"
   end
 
   create_table "bookings", force: :cascade do |t|
@@ -24,6 +25,7 @@ ActiveRecord::Schema.define(version: 2018_09_27_062105) do
     t.integer "seats"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "show_id"
   end
 
   create_table "movies", force: :cascade do |t|

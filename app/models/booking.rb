@@ -1,0 +1,23 @@
+class Booking < ApplicationRecord
+  validates :name, presence: true, length:{maximum:30}
+  validates :seats, presence: true, numericality:{only_integer: true}, length:{maximum:5}
+  has_many :tickets , dependent: :destroy
+  belongs_to :shows
+
+  after_create :seats_cal
+  
+  private
+    # def seats_book
+    #   if seats > Shows.seats
+    #     errors.add(:seats, "Not enough seats available.")
+    #   end
+    # end
+
+    def seats_cal
+      @show = Show.find(params[:show_id])
+      @seats = Self.find(params[:seats])
+      @show.seat -= @seats
+      Shows.save
+    end
+    
+end
