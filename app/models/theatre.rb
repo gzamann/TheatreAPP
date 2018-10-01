@@ -4,4 +4,14 @@ class Theatre < ApplicationRecord
   validates :number, presence: true, numericality:{only_integer: true}, length:{maximum:10}
   has_many :audis
   has_many :bookings
+
+  # after_create :testit
+
+  
+  # private
+  #   def testit
+  #     @tname = Theatre.find(params[:id])
+  #     @tname.name = "myname"
+  #     Theatre.save
+  #   end
 end

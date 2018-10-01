@@ -2,7 +2,7 @@ class Booking < ApplicationRecord
   validates :name, presence: true, length:{maximum:30}
   validates :seats, presence: true, numericality:{only_integer: true}, length:{maximum:5}
   has_many :tickets , dependent: :destroy
-  belongs_to :shows
+  belongs_to :show
 
   after_create :seats_cal
   
@@ -15,8 +15,9 @@ class Booking < ApplicationRecord
 
     def seats_cal
       @show = Show.find(params[:show_id])
-      @seats = Self.find(params[:seats])
-      @show.seat -= @seats
+      @seats = Booking.find(params[:seats])
+      @show.seats -= @seats
+      
       Shows.save
     end
     
