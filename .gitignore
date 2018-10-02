@@ -31,3 +31,6 @@
 /config/master.key
 
 /app/models/validationsme.txt
+
+/db/migrate/20181001063853_add_theatre_id_to_posts.rb
+/db/migrate/20181001152611_rename_theatres.rb
