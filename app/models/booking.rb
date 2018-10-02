@@ -4,14 +4,15 @@ class Booking < ApplicationRecord
   has_many :tickets , dependent: :destroy
   belongs_to :show
 
+  before_update :seats_book
   after_create :seats_cal
   
   private
-    # def seats_book
-    #   if seats > Shows.seats
-    #     errors.add(:seats, "Not enough seats available.")
-    #   end
-    # end
+    def seats_book
+      if seats > Show.seats
+        errors.add(:seats, "Not enough seats available.")
+      end
+    end
 
     def seats_cal
       @show = Show.find(params[:show_id])

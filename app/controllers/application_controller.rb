@@ -1,3 +1,10 @@
 class ApplicationController < ActionController::Base
-  params = ActionController::Parameters.new(id: "value")
+
+  def index
+    @theatre = Theatre.new(params)
+  end
+  # private
+  #   def booking_params
+  #     params.require
+  #   end
 end

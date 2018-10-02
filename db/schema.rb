@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 2018_10_01_152611) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "show_id"
+    t.integer "viewer_id"
   end
 
   create_table "movies", force: :cascade do |t|
@@ -33,6 +34,7 @@ ActiveRecord::Schema.define(version: 2018_10_01_152611) do
     t.string "rating"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "audi_id"
   end
 
   create_table "shows", force: :cascade do |t|
@@ -40,6 +42,8 @@ ActiveRecord::Schema.define(version: 2018_10_01_152611) do
     t.integer "seats"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "audi_id"
+    t.integer "movie_id"
   end
 
   create_table "theatres", force: :cascade do |t|
@@ -54,6 +58,9 @@ ActiveRecord::Schema.define(version: 2018_10_01_152611) do
     t.integer "number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "audi_id"
+    t.integer "booking_id"
+    t.integer "movie_id"
   end
 
   create_table "viewers", force: :cascade do |t|
